@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CustomCursor from './components/ui/CustomCursor';
 import ParticleBackground from './components/ui/ParticleBackground';
-import Preloader from './components/ui/Preloader';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import Terminal from './components/sections/Terminal';
@@ -75,9 +74,6 @@ function App() {
 
   return (
     <>
-      {/* Preloader */}
-      <Preloader />
-
       {/* Background layers */}
       <div className="grid-bg" />
       <ParticleBackground />

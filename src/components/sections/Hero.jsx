@@ -7,7 +7,7 @@ import MagneticButton from '../ui/MagneticButton';
 import './Hero.css';
 
 function CountUpMetric({ metric, index }) {
-  const { display, ref } = useCountUp(metric.value, 2000, 2200);
+  const { display, ref } = useCountUp(metric.value, 2000);
 
   return (
     <div ref={ref} className="hero-metric parallax-layer" data-speed={0.3 + index * 0.1}>
