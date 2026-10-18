@@ -65,7 +65,7 @@ export function WorkIndex({ projects, categoryOrder }: { projects: WorkItem[]; c
               <li key={p.slug} className="work-li">
                 <Link href={`/work/${p.slug}`} data-cursor="View" className="group block">
                   <div data-shared-source="true" className="relative aspect-[4/3] overflow-hidden rounded-card bg-ink">
-                    <ProjectMedia media={p.media} title={p.title} index={idx(p.slug)} sizes="(min-width: 768px) 46vw, 92vw"
+                    <ProjectMedia media={p.media} title={p.title} sizes="(min-width: 768px) 46vw, 92vw"
                       className="transition-transform duration-[1200ms] ease-[var(--ease-expo)] group-hover:scale-[1.04]" />
                   </div>
                   <div className="mt-2 flex items-end justify-between gap-6 rounded-tile bg-ink/[0.07] p-5 sm:p-6">
@@ -101,7 +101,7 @@ export function WorkIndex({ projects, categoryOrder }: { projects: WorkItem[]; c
               <div aria-hidden="true" ref={previewRef} className="pointer-events-none absolute left-0 top-0 z-20">
                 {active && (
                   <div key={active.slug} className="work-preview relative aspect-[4/3] w-[min(380px,30vw)] overflow-hidden rounded-tile bg-ink">
-                    <ProjectMedia media={active.media} title={active.title} index={idx(active.slug)} sizes="380px" />
+                    <ProjectMedia media={active.media} title={active.title} sizes="380px" />
                   </div>
                 )}
               </div>

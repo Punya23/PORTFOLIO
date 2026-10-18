@@ -43,7 +43,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         <article style={{ "--accent": "#d9a441" } as React.CSSProperties}>
           <header data-tone="ink" className="tone-ink relative isolate min-h-[100svh] overflow-hidden">
             <div data-shared-target="true" className="absolute inset-0 -z-20 bg-ink">
-              <ProjectMedia media={p.media} title={p.title} index={i} priority sizes="100vw" />
+              <ProjectMedia media={p.media} title={p.title} priority sizes="100vw" bare />
             </div>
             <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(10,10,10,0.5)_0%,rgba(10,10,10,0)_28%,rgba(10,10,10,0.15)_52%,rgba(10,10,10,0.82)_100%)]" />
             <Link href="/work" className="group absolute left-[var(--margin)] top-[4.75rem] z-10 inline-flex h-10 items-center gap-2 rounded-pill border border-white/30 bg-black/20 px-4 text-[0.9375rem] text-white backdrop-blur-md transition-colors duration-300 hover:bg-white hover:text-ink sm:top-24">
@@ -145,7 +145,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
               </div>
               <Link href={`/work/${next.slug}`} data-cursor="Open" aria-label={`Next project: ${next.title}`} className="group block">
                 <div data-shared-source="true" className="relative aspect-[16/8] overflow-hidden rounded-card bg-ink">
-                  <ProjectMedia media={next.media} title={next.title} index={(i + 1) % allWork.length} sizes="100vw" />
+                  <ProjectMedia media={next.media} title={next.title} sizes="100vw" />
                 </div>
                 <div className="mt-6 flex items-end justify-between gap-6">
                   <h2 className="max-w-[16ch] text-h1 leading-none">{next.title}</h2>

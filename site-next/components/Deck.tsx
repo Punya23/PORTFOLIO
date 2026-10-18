@@ -75,7 +75,7 @@ export function Deck({ projects, total }: { projects: DeckProject[]; total: numb
                   <Link href={`/work/${p.slug}`} data-cursor="View" aria-label={`${p.title}, ${p.role || "case study"}, ${p.year}`}
                     className="absolute inset-0 block">
                     <span data-shared-source className="absolute inset-0 block overflow-hidden rounded-[10px] bg-ink">
-                      <ProjectMedia media={p.cover} title={p.title} index={i} accent={p.accentColor}
+                      <ProjectMedia media={p.cover} title={p.title}
                         sizes="(min-width: 900px) 58vw, 92vw" priority={i === 0} />
                     </span>
                   </Link>
@@ -119,7 +119,7 @@ export function Deck({ projects, total }: { projects: DeckProject[]; total: numb
           <div className="hidden lg:col-span-2 lg:col-start-11 lg:flex lg:justify-end">
             <Link href="/work" className="group flex items-center gap-4 rounded-tile bg-ink/[0.06] pr-5 text-[1.0625rem] font-medium transition-colors hover:bg-ink/10">
               <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-l-tile">
-                <ProjectMedia media={next.cover} title={next.title} index={(idx + 1) % m} accent={next.accentColor} numeral={false} sizes="64px" />
+                <ProjectMedia media={next.cover} title={next.title} sizes="64px" />
               </span>
               <span className="whitespace-nowrap">See all <span className="text-muted">({pad2(total)})</span></span>
             </Link>

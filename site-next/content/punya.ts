@@ -85,37 +85,38 @@ export const metrics = [
 ];
 
 /**
- * 10 projects. The first 4 are the "Selected work" deck. No screenshots yet: `media` is omitted so the
- * gradient cover placeholder renders. TODO(user): SciFex + Ad Intel descriptions/screenshots.
+ * `draft` entries stay here but are hidden from the site until they have real content (Ad Intel needs a
+ * description and repo). The first four are the "Selected work" deck, so keep them to projects with a screenshot.
  */
-export const projects = [
+const allProjects = [
   { slug: "scifex", title: "SciFex", kind: "Design and engineering", year: "2026",
     summary: "Multi-agent cyber defense system: 11 agents run recon, crawling and parallel exploitation against a target, then write a pentest report and code patches.",
     tags: ["Python", "FastAPI", "Scikit-learn", "LLM APIs"], url: "", repo: "https://github.com/Punya23/CYPHEX" },
-  { slug: "ad-intel", title: "Ad Intel", kind: "Design and engineering", year: "2026",
-    summary: "TODO(user): one-line description of Ad Intel.", tags: ["TODO"], url: "", repo: "" },
-  { slug: "quantisense", title: "Quantisense", kind: "Design and engineering", year: "2026",
-    summary: "Automated credit appraisal that cuts turnaround from a week to minutes: document parsing, fraud detection, stress tests, a research agent and CAM report generation.",
-    tags: ["MERN", "ML", "EDA", "Python", "LLM", "FastAPI"], url: "", repo: "https://github.com/vedant91/Multi-agents" },
   { slug: "dineveo", title: "Dineveo", kind: "Design and engineering", year: "2026",
     summary: "Restaurant and hotel operating system: CRM, waiter app and kitchen display, paired with a free customer app for QR dine-in and takeaway.",
     tags: ["Node", "Express", "Socket.io", "React", "React Native"], url: "", repo: "" }, // repo HM_CRM is private on GitHub
-  { slug: "voice-agent", title: "Financial Advisory Voice Agent", kind: "Engineering", year: "2026",
-    summary: "Autonomous multilingual calling agent: qualifies leads, handles objections, schedules advisor appointments and syncs CRM and WhatsApp. 100+ calls a day.",
-    tags: ["LLM", "Voice AI", "FastAPI", "Deepgram", "Exotel", "AWS Polly"], url: "", repo: "https://github.com/Punya23/Kalpvrukshfinserv_Automation" },
-  { slug: "rahi", title: "RAHI", kind: "Design and engineering", year: "2025",
-    summary: "Rural AI for health and inclusion: healthcare, education, agriculture, schemes and emergency services. Offline-capable, multilingual, with speech for low-literacy users.",
-    tags: ["MERN", "NLP", "STT/TTS", "LLM"], url: "", repo: "" } /* RAHI repo is private on GitHub */,
+  { slug: "quantisense", title: "Quantisense", kind: "Design and engineering", year: "2026",
+    summary: "Automated credit appraisal that cuts turnaround from a week to minutes: document parsing, fraud detection, stress tests, a research agent and CAM report generation.",
+    tags: ["MERN", "ML", "EDA", "Python", "LLM", "FastAPI"], url: "", repo: "https://github.com/vedant91/Multi-agents" },
   { slug: "localloop", title: "LocalLoop", kind: "Design and engineering", year: "2025",
     summary: "Student relocation platform: verified housing with ML rent prediction, community groups, mentors, real-time chat and an AI assistant.",
     tags: ["NestJS", "Next.js", "PostgreSQL", "Socket.io"], url: "https://localloop-red.vercel.app", repo: "https://github.com/Punya23/Localloop" },
+  { slug: "rahi", title: "RAHI", kind: "Design and engineering", year: "2025",
+    summary: "Rural AI for health and inclusion: healthcare, education, agriculture, schemes and emergency services. Offline-capable, multilingual, with speech for low-literacy users.",
+    tags: ["MERN", "NLP", "STT/TTS", "LLM"], url: "", repo: "" } /* RAHI repo is private on GitHub */,
   { slug: "carbon-sense", title: "Carbon Sense", kind: "Design and engineering", year: "2025",
     summary: "Predicts a personal carbon footprint from travel, diet and energy data with about 88% accuracy and suggests reductions.",
     tags: ["Python", "FastAPI", "LangChain", "Recharts"], url: "", repo: "" } /* CarbonSense repo is private on GitHub */,
+  { slug: "voice-agent", title: "Financial Advisory Voice Agent", kind: "Engineering", year: "2026",
+    summary: "Autonomous multilingual calling agent: qualifies leads, handles objections, schedules advisor appointments and syncs CRM and WhatsApp. 100+ calls a day.",
+    tags: ["LLM", "Voice AI", "FastAPI", "Deepgram", "Exotel", "AWS Polly"], url: "", repo: "https://github.com/Punya23/Kalpvrukshfinserv_Automation" },
   { slug: "ctms", title: "CTMS", kind: "Design and engineering", year: "2026",
     summary: "Campus placement ERP with student and TPO panels, AI resume matching and round tracking. Cut TPO workflow effort by 65%.",
     tags: ["React", "Node", "Prisma", "PostgreSQL", "Tailwind"], url: "", repo: "https://github.com/VishalMache/CTMS" },
   { slug: "hiring-agent", title: "Hiring Agent", kind: "Engineering", year: "2026",
     summary: "AI agent that evaluates and scores resumes against a role.", tags: ["Python", "LLM"], url: "", repo: "https://github.com/Punya23/hiring-agent" },
+  { slug: "ad-intel", draft: true, title: "Ad Intel", kind: "Design and engineering", year: "2026",
+    summary: "TODO(user): one-line description of Ad Intel.", tags: ["TODO"], url: "", repo: "" },
 ];
+export const projects = allProjects.filter((p) => !("draft" in p && p.draft));
 export const selectedProjects = projects.slice(0, 4);
