@@ -28,3 +28,6 @@
 @media (prefers-reduced-motion: reduce) {
   .menu-panel, .menu-panel li > div { animation: none !important; }
 }
+
+/* hero: "Punya" has a descender (y) that Tanish's wordmark lacks; reserve room so it clears the role line */
+.hero-mark-gap { height: calc(var(--fs-wordmark) * 0.98); }

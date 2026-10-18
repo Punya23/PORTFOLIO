@@ -74,7 +74,7 @@ export function Preloader({ skills }: { skills: string[] }) {
           <span className="pre-lead">Need a guy for</span>
           <span ref={slot} className="pre-slot" style={{ width }}><span>{skills[0]}</span></span>
         </p>
-        <p className="pre-found">You found <span className="pre-him">him.</span></p>
+        <p className="pre-found">You found <span className="pre-him">Punya.</span></p>
       </div>
       <p aria-hidden="true" className="pre-count text-meta tabular-nums">
         (<span ref={count}>01</span>/{pad2(skills.length)})
