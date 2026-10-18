@@ -89,7 +89,7 @@ export const metrics = [
  * description and repo). The first four are the "Selected work" deck, so keep them to projects with a screenshot.
  */
 const allProjects = [
-  { slug: "scifex", title: "SciFex", kind: "Design and engineering", year: "2026",
+  { slug: "cyphex", title: "CYPHEX", kind: "Design and engineering", year: "2026",
     summary: "Multi-agent cyber defense system: 11 agents run recon, crawling and parallel exploitation against a target, then write a pentest report and code patches.",
     tags: ["Python", "FastAPI", "Scikit-learn", "LLM APIs"], url: "", repo: "https://github.com/Punya23/CYPHEX" },
   { slug: "dineveo", title: "Dineveo", kind: "Design and engineering", year: "2026",

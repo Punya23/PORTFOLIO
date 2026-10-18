@@ -25,8 +25,8 @@ const todo = (name: string): Section[] => [
 ];
 
 export const caseStudies: Record<string, CaseStudy> = {
-  scifex: {
-    media: { url: "/projects/scifex.jpg", alt: "CYPHEX multi-agent cybersecurity terminal poster", ratio: 1.5, device: "laptop", backdrop: ["#1a1411", "#3b2a12"], tilt: -6 },
+  cyphex: {
+    media: { url: "/projects/cyphex.jpg", alt: "CYPHEX multi-agent cybersecurity terminal poster", ratio: 1.5, device: "laptop", backdrop: ["#1a1411", "#3b2a12"], tilt: -6 },
     categories: ["Security", "AI/ML", "Open source"],
     status: "Open source",
     stats: [
