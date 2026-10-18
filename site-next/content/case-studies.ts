@@ -62,22 +62,25 @@ export const caseStudies: Record<string, CaseStudy> = {
     categories: ["Security", "AI/ML", "Open source"],
     status: "Open source",
     stats: [
-      { value: "5+", label: "AI agents" },
+      { value: "11", label: "Specialised agents" },
+      { value: "5", label: "Pipeline stages" },
       { value: "~70%", label: "Less manual audit effort" },
-      { value: "3", label: "Vulnerability classes covered" },
     ],
     sections: [
-      { title: "Problem", body: ["Security audits of web applications are repetitive: crawl the app, try the usual attacks, write up what broke. Most of that effort is manual."] },
-      { title: "Approach", body: ["CYPHEX splits the audit across cooperating AI agents. They crawl the target, simulate attacks, classify what they find and write a report with actionable fixes."] },
+      { title: "Problem", body: ["Security audits of web applications are repetitive: map the app, try the usual attacks, write up what broke. Most of that effort is manual."] },
+      { title: "Approach", body: ["CYPHEX is a dynamic application security testing pipeline built on a multi-agent architecture. It runs real terminal commands through an asyncio subprocess engine (curl, nmap and similar) rather than simulating attacks, and uses an LLM only to write the report and the fixes."] },
       {
-        title: "Coverage",
+        title: "The pipeline",
+        ordered: true,
         steps: [
-          { lead: "SQL injection.", text: "Probes inputs and reports injectable endpoints with fixes." },
-          { lead: "XSS.", text: "Tests inputs for script injection." },
-          { lead: "CSRF.", text: "Checks state-changing requests for missing protection." },
+          { lead: "Reconnaissance.", text: "Gathers headers and the tech stack and probes for sensitive files." },
+          { lead: "Crawling.", text: "Maps endpoints and parses forms and parameters for targeted fuzzing." },
+          { lead: "Exploitation.", text: "Seven agents run in parallel: SQL injection, XSS, authentication, command injection, file inclusion, business logic (IDOR, SSRF, CORS) and supply chain." },
+          { lead: "Analysis.", text: "Condenses the terminal history into a formal pentest report." },
+          { lead: "Remediation.", text: "Produces framework-specific code patches and a cure plan." },
         ],
       },
-      { title: "Outcome", body: ["Five or more agents share the work, cutting manual audit effort by roughly 70%. The code is open source."] },
+      { title: "Outcome", body: ["Eleven agents share the work, cutting manual audit effort by roughly 70%. A bundled test app with 14+ intentional vulnerabilities lets anyone try it safely. The code is open source."] },
     ],
   },
   "voice-agent": {
@@ -118,12 +121,21 @@ export const caseStudies: Record<string, CaseStudy> = {
   },
   localloop: {
     categories: ["Web", "AI/ML", "Open source"],
-    status: "Open source",
+    status: "Live",
     stats: [{ value: "85%+", label: "Rent prediction accuracy" }],
     sections: [
-      { title: "Problem", body: ["Students moving to a new city have to judge rents, find places and find people with little local knowledge."] },
-      { title: "Approach", body: ["LocalLoop combines an ML rent-prediction model with recommendations, a chatbot and community features, on a Node, React and PostgreSQL stack with Socket.io for real-time features."] },
-      { title: "Outcome", body: ["The rent model reaches 85%+ accuracy. The code is open source."] },
+      { title: "Problem", body: ["Students and young professionals moving to a new city face unverified broker listings with inflated rents, scattered WhatsApp groups, little trusted local guidance and real safety concerns."] },
+      { title: "Approach", body: ["LocalLoop puts relocation in one community-driven platform built on three pillars: housing discovery, community groups and a mentor network. It runs on Next.js, NestJS and PostgreSQL, with Socket.io for real-time chat and a Cerebras-powered assistant."] },
+      {
+        title: "What it does",
+        steps: [
+          { lead: "Housing discovery.", text: "PG, hostel and flat listings with an ML rent predictor that flags overpriced ones, map exploration, filters and reviews." },
+          { lead: "Community.", text: "University, professional, hometown and newcomer groups, polls and group chat." },
+          { lead: "Mentors.", text: "Reputation levels from Explorer to Local Mentor gate who can mentor." },
+          { lead: "Women mode.", text: "Women-only spaces, mentor recommendations and safety-tagged housing." },
+        ],
+      },
+      { title: "Outcome", body: ["The rent model reaches 85%+ accuracy, and the app is live. The code is open source."] },
     ],
   },
   "carbon-sense": {
@@ -151,9 +163,9 @@ export const caseStudies: Record<string, CaseStudy> = {
   },
   "hiring-agent": {
     categories: ["AI/ML", "Open source"],
-    status: "Open source",
+    status: "Fork",
     sections: [
-      { title: "Overview", body: ["Hiring Agent is an LLM-based agent, written in Python, that evaluates resumes against a role and scores them. The code is open source."] },
+      { title: "Overview", body: ["A resume-to-score pipeline that extracts structured data from PDF resumes, enriches it with GitHub signals and outputs an explainable evaluation. This is my fork of an open-source project, written in Python."] },
     ],
   },
 };
