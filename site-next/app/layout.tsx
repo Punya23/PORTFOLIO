@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Geist_Mono, Caveat } from "next/font/google";
 import "./site.css";
+import "./custom.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
