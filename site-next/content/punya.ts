@@ -18,8 +18,8 @@ export const person = {
 export const socials = [
   { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/punya-surana" },
   { id: "github", label: "GitHub", url: "https://github.com/Punya23" },
-  { id: "x", label: "X", url: "https://x.com/" }, // TODO(user): real X profile
-  { id: "leetcode", label: "LeetCode", url: "https://leetcode.com/" }, // TODO(user): real LeetCode profile
+  { id: "x", label: "X", url: "https://x.com/SuranaPunya" },
+  { id: "leetcode", label: "LeetCode", url: "https://leetcode.com/u/IHHtYaP44Z/" },
   { id: "email", label: "Email", url: "mailto:Punyasurana23@gmail.com" },
 ];
 
