@@ -5,14 +5,14 @@ import { InView } from "@/components/InView";
 type Tool = { name: string; icon: string; tile?: string; fill?: boolean };
 // Icons live in /public/icons (simpleicons / devicon). Tile = face background.
 const tools: Tool[] = [
-  { name: "Python", icon: "python" }, { name: "React", icon: "react" }, { name: "Next.js", icon: "nextdotjs" },
-  { name: "TypeScript", icon: "typescript" }, { name: "FastAPI", icon: "fastapi" }, { name: "Node.js", icon: "nodedotjs" },
-  { name: "PyTorch", icon: "pytorch" }, { name: "TensorFlow", icon: "tensorflow" }, { name: "OpenCV", icon: "opencv" },
-  { name: "scikit-learn", icon: "scikitlearn" }, { name: "Pandas", icon: "pandas" }, { name: "LangChain", icon: "langchain", tile: "#0b1b26" },
-  { name: "n8n", icon: "n8n" }, { name: "PostgreSQL", icon: "postgresql" }, { name: "MongoDB", icon: "mongodb" },
-  { name: "Docker", icon: "docker" }, { name: "AWS", icon: "aws" }, { name: "GitHub", icon: "github" },
-  { name: "JavaScript", icon: "javascript", tile: "#f0db4f" }, { name: "Java", icon: "java" }, { name: "Flask", icon: "flask" },
-  { name: "Tailwind CSS", icon: "tailwindcss" }, { name: "Figma", icon: "figma", tile: "#1e1e1e" },
+  { name: "Python", icon: "dv-python" }, { name: "React", icon: "dv-react" }, { name: "Next.js", icon: "dv-nextjs" },
+  { name: "TypeScript", icon: "dv-typescript" }, { name: "FastAPI", icon: "dv-fastapi" }, { name: "Node.js", icon: "dv-nodejs" },
+  { name: "PyTorch", icon: "dv-pytorch" }, { name: "TensorFlow", icon: "dv-tensorflow" }, { name: "OpenCV", icon: "dv-opencv" },
+  { name: "scikit-learn", icon: "dv-scikitlearn" }, { name: "Pandas", icon: "dv-pandas" }, { name: "LangChain", icon: "langchain", tile: "#0b1b26" },
+  { name: "n8n", icon: "n8n" }, { name: "PostgreSQL", icon: "dv-postgresql" }, { name: "MongoDB", icon: "dv-mongodb" },
+  { name: "Docker", icon: "dv-docker" }, { name: "AWS", icon: "aws" }, { name: "GitHub", icon: "dv-github" },
+  { name: "JavaScript", icon: "dv-javascript" }, { name: "Java", icon: "dv-java" }, { name: "Flask", icon: "dv-flask" },
+  { name: "Tailwind CSS", icon: "dv-tailwindcss" }, { name: "Figma", icon: "dv-figma" },
 ];
 
 const Tile = ({ t, i, hidden }: { t: Tool; i: number; hidden?: boolean }) => (
@@ -21,7 +21,7 @@ const Tile = ({ t, i, hidden }: { t: Tool; i: number; hidden?: boolean }) => (
     <span className="tool-face grid size-[clamp(2.75rem,4.6vw,4.25rem)] place-items-center overflow-hidden rounded-[22%] ring-1 ring-black/[0.07]">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={`/icons/${t.icon}.svg`} alt="" width={48} height={48} loading="lazy" decoding="async" draggable={false}
-        className="object-contain size-[56%]" />
+        className="object-contain size-[68%]" />
     </span>
     {!hidden && <span className="sr-only">{t.name}</span>}
     <span aria-hidden="true" className="tool-name">{t.name}</span>
