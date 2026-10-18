@@ -3,6 +3,7 @@ import Clock from "./Clock";
 import { HeroDock } from "@/components/HeroDock";
 import { HeroEffects } from "@/components/HeroEffects";
 import { Statement } from "@/components/Statement";
+import { Desktop } from "@/components/Desktop";
 import { Toolkit } from "@/components/Toolkit";
 import { Work } from "@/components/Work";
 import { Craft } from "@/components/Craft";
@@ -15,7 +16,7 @@ export default function Home() {
         <div data-page="true">
           <div dangerouslySetInnerHTML={{ __html: MARK + HERO }} />
           <Statement />
-          {/* DESKTOP_SLOT */}
+          <Desktop />
           <Toolkit />
           <Work />
           <Craft />

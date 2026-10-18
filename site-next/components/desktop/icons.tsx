@@ -153,7 +153,7 @@ let STROKE = {
     strokeWidth: 1.5,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-  },
+  } as const,
   AppleIcon = (e: P) => (
     <svg viewBox="0 0 814 1000" aria-hidden {...e}>
       <path
@@ -417,4 +417,4 @@ let STROKE = {
     </svg>
   );
 
-export { FolderIcon, DocIcon, IconDefs, NotesIcon, MailIcon, XIcon, AppleIcon, BatteryIcon, WifiIcon, SearchIcon, ControlIcon, GridIcon, ListIcon, ShareIcon, TagIcon, ActionIcon, SideFolderIcon, SideNoteIcon, BulletsIcon, TrashIcon, ComposeIcon, FontIcon, ChecklistIcon, TableIcon, LockIcon, STROKE };
+export { FolderIcon, DocIcon, IconDefs, NotesIcon, MailIcon, XIcon, AppleIcon, BatteryIcon, WifiIcon, SearchIcon, ControlIcon, GridIcon, ListIcon, ShareIcon, TagIcon, ActionIcon, SideFolderIcon, SideNoteIcon, BulletsIcon, TrashIcon, ComposeIcon, FontIcon, ChecklistIcon, TableIcon, LockIcon, STROKE, ChevLeft, ChevRight, ChevDown };
