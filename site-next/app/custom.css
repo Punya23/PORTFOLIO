@@ -36,3 +36,17 @@
 
 /* Punya palette: warm off-white instead of pure white for the light sections */
 :root { --color-paper: #faf5ea; }
+
+/* footer: gold horizon instead of the reference's blue/pastel one, on the cream paper colour */
+.footer-field { background: linear-gradient(var(--color-paper) 50%, #000 0); }
+.footer-wave {
+  background:
+    linear-gradient(188deg, #0000 38%, #fbe9c8 50%, #f3d79a 57%, #d9a441 64%, #9a6416 72%, #4a2f0a 82%, #1a1006 92%, #000 98%),
+    radial-gradient(70% 55% at 0 62%, #f6dfb5b3, #0000 70%),
+    var(--color-paper);
+}
+.footer-shade {
+  background:
+    linear-gradient(var(--color-paper), #0000 32%),
+    linear-gradient(0deg, #000, #000000d9 7%, #0000 26%);
+}
