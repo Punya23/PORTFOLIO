@@ -348,7 +348,7 @@ export function Desktop() {
                   >
                     <IconDefs />
                     <img
-                      src="/desktop/wallpaper-gold.webp"
+                      src="/desktop/wallpaper-wwdc.webp"
                       alt=""
                       width={2560}
                       height={1440}
