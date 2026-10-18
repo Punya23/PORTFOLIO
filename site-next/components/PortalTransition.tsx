@@ -450,7 +450,9 @@ export function PortalTransition(e: PortalProps) {
           D(P, F + 0.08, { push: 1, ease: "sine.inOut" }),
           D(P, P + 0.85 * I, { fall: 1, ease: "power2.in" }),
           D(P + 0.3 * I, P + 0.7 * I, { flare: 1, ease: "sine.inOut" }),
-          D(P + 0.08 * I, F, { rise: 1, ease: "power2.inOut" }),
+          // Punya tweak: the next section's heading ("Disciplines") only rises once the void has fully
+          // opened and the hands are gone, instead of blooming over the hands mid-effect (reference: P + 0.08 * I → F).
+          D(F - 0.02, F + 0.12, { rise: 1, ease: "power2.inOut" }),
           D(P + 0.55 * I, F + 0.08, { filter: 0, ease: "sine.inOut" }),
           D(F + 0.02, B, { parts: 0.7, ease: "sine.inOut" }),
           D(F + 0.03, B, { fill: 1, ease: "power2.out" }),
