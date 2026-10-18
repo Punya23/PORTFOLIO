@@ -33,3 +33,6 @@
 
 /* hero: "Punya" has a descender (y) that Tanish's wordmark lacks; reserve room so it clears the role line */
 .hero-mark-gap { height: calc(var(--fs-wordmark) * 0.98); }
+
+/* Punya palette: warm off-white instead of pure white for the light sections */
+:root { --color-paper: #faf5ea; }
