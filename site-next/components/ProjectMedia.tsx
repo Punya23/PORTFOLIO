@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { DeviceMockup, type MockupMedia } from "@/components/DeviceMockup";
 
-/** `bg` is the colour behind a letterboxed image (sample the screenshot's edge) so it is shown whole, never cropped. */
-export type Media = { url: string; alt: string; kind?: "image" | "video"; blurDataURL?: string; bg?: string };
+export type Media = MockupMedia;
 
 type Props = {
   media?: Media;
@@ -12,22 +11,13 @@ type Props = {
   className?: string;
   /** With no media: render nothing instead of the typographic cover (use when the page already shows the title). */
   bare?: boolean;
+  /** Page-hero placement (see DeviceMockup). */
+  hero?: boolean;
 };
 
-/** Project cover: video, image (next/image fill; parent must be positioned) or a typographic placeholder (title on dark). */
-export function ProjectMedia({ media, title, sizes = "100vw", priority = false, className, bare = false }: Props) {
-  if (media?.kind === "video")
-    return (
-      <video className={cn("absolute inset-0 h-full w-full object-cover", className)} src={media.url} aria-label={media.alt}
-        muted loop playsInline autoPlay preload="metadata" />
-    );
-  if (media)
-    return (
-      <div className="absolute inset-0" style={{ backgroundColor: media.bg ?? "#0a0a0a" }}>
-        <Image src={media.url} alt={media.alt} fill sizes={sizes} priority={priority}
-          placeholder={media.blurDataURL ? "blur" : "empty"} blurDataURL={media.blurDataURL} className={cn("object-contain", className)} />
-      </div>
-    );
+/** Project cover: a screenshot on a device mockup (parent must be positioned and sized) or a typographic placeholder (title on dark). */
+export function ProjectMedia({ media, title, sizes = "100vw", priority = false, className, bare = false, hero = false }: Props) {
+  if (media) return <DeviceMockup media={media} sizes={sizes} priority={priority} className={className} hero={hero} />;
   if (bare) return null;
   return (
     <div role="img" aria-label={`${title} cover placeholder`}
