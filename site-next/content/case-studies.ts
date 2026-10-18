@@ -26,6 +26,7 @@ const todo = (name: string): Section[] => [
 
 export const caseStudies: Record<string, CaseStudy> = {
   scifex: {
+    media: { url: "/projects/scifex.jpg", alt: "CYPHEX multi-agent cybersecurity terminal poster" },
     categories: ["Security", "AI/ML", "Open source"],
     status: "Open source",
     stats: [
@@ -56,6 +57,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     sections: todo("Ad Intel"),
   },
   quantisense: {
+    media: { url: "/projects/quantisense.png", alt: "Quantisense credit appraisal pipeline screen" },
     categories: ["AI/ML", "Web"],
     status: "Built",
     stats: [
@@ -80,6 +82,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
   dineveo: {
+    media: { url: "/projects/dineveo.webp", alt: "Dineveo customer app home screen with offers and restaurants" },
     categories: ["Web"],
     status: "Built",
     sections: [
@@ -121,6 +124,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
   rahi: {
+    media: { url: "/projects/rahi.png", alt: "RAHI home screen with health, education, farming and government services" },
     categories: ["AI/ML", "Web", "Open source"],
     status: "Open source",
     stats: [
@@ -135,6 +139,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
   localloop: {
+    media: { url: "/projects/localloop.png", alt: "LocalLoop dashboard with housing recommendations and chatbot" },
     categories: ["Web", "AI/ML", "Open source"],
     status: "Live",
     stats: [{ value: "85%+", label: "Rent prediction accuracy" }],
@@ -154,6 +159,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
   "carbon-sense": {
+    media: { url: "/projects/carbon-sense.jpg", alt: "CarbonSense dashboard with carbon score and footprint" },
     categories: ["AI/ML", "Web", "Open source"],
     status: "Open source",
     stats: [

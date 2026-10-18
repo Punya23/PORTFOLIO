@@ -3,6 +3,7 @@ import { ScrollScene } from "./ScrollScene";
 import { CraftBurn } from "./CraftBurn";
 import { CRAFT_BEFORE, CRAFT_AFTER } from "@/app/craft-frag";
 import { projects } from "@/content/punya";
+import { caseStudies } from "@/content/case-studies";
 
 /** Same gradient cover the work deck uses until a project has a screenshot. */
 const POS = [["16%", "6%", "92%", "104%"], ["84%", "4%", "8%", "100%"], ["50%", "-6%", "100%", "72%"], ["10%", "96%", "88%", "-4%"]];
@@ -13,7 +14,7 @@ function cover(i: number, title: string, media?: string) {
 }
 const BEFORE = CRAFT_BEFORE.replace(/@@COVER(\d+)@@/g, (_, k) => {
   const p = projects[Number(k) % projects.length];
-  return cover(Number(k), p.title);
+  return cover(Number(k), p.title, caseStudies[p.slug]?.media?.url);
 });
 
 /** "I use AI, but I don't ship slop." The fake AI-template collage burns away as you scroll (WebGL). */
