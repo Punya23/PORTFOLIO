@@ -7,6 +7,7 @@ import { Desktop } from "@/components/Desktop";
 import { Toolkit } from "@/components/Toolkit";
 import { Work } from "@/components/Work";
 import { Craft } from "@/components/Craft";
+import { Narration } from "@/components/Narration";
 import { ContactSection, SiteFooter, BitField } from "@/components/chrome";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <HeroDock />
       <HeroEffects />
       <Clock />
+      <Narration />
     </div>
   );
 }
