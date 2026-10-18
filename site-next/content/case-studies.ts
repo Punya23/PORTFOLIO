@@ -26,9 +26,29 @@ const todo = (name: string): Section[] => [
 
 export const caseStudies: Record<string, CaseStudy> = {
   scifex: {
-    categories: ["AI/ML"], // TODO(user): confirm categories
-    status: "TODO(user)",
-    sections: todo("SciFex"),
+    categories: ["Security", "AI/ML", "Open source"],
+    status: "Open source",
+    stats: [
+      { value: "11", label: "Specialised agents" },
+      { value: "5", label: "Pipeline stages" },
+      { value: "~70%", label: "Less manual audit effort" },
+    ],
+    sections: [
+      { title: "Problem", body: ["Security audits of web applications are repetitive: map the app, try the usual attacks, write up what broke. Most of that effort is manual."] },
+      { title: "Approach", body: ["CYPHEX is a dynamic application security testing pipeline built on a multi-agent architecture. It runs real terminal commands through an asyncio subprocess engine (curl, nmap and similar) rather than simulating attacks, and uses an LLM only to write the report and the fixes."] },
+      {
+        title: "The pipeline",
+        ordered: true,
+        steps: [
+          { lead: "Reconnaissance.", text: "Gathers headers and the tech stack and probes for sensitive files." },
+          { lead: "Crawling.", text: "Maps endpoints and parses forms and parameters for targeted fuzzing." },
+          { lead: "Exploitation.", text: "Seven agents run in parallel: SQL injection, XSS, authentication, command injection, file inclusion, business logic (IDOR, SSRF, CORS) and supply chain." },
+          { lead: "Analysis.", text: "Condenses the terminal history into a formal pentest report." },
+          { lead: "Remediation.", text: "Produces framework-specific code patches and a cure plan." },
+        ],
+      },
+      { title: "Outcome", body: ["Eleven agents share the work, cutting manual audit effort by roughly 70%. A bundled test app with 14+ intentional vulnerabilities lets anyone try it safely. The code is open source."] },
+    ],
   },
   "ad-intel": {
     categories: ["AI/ML"], // TODO(user): confirm categories
@@ -58,29 +78,22 @@ export const caseStudies: Record<string, CaseStudy> = {
       { title: "Outcome", body: ["Appraisal time dropped from 5–7 days to under 10 minutes, with 92.5% accuracy on the AI risk analysis."] },
     ],
   },
-  cyphex: {
-    categories: ["Security", "AI/ML", "Open source"],
-    status: "Open source",
-    stats: [
-      { value: "11", label: "Specialised agents" },
-      { value: "5", label: "Pipeline stages" },
-      { value: "~70%", label: "Less manual audit effort" },
-    ],
+  dineveo: {
+    categories: ["Web"],
+    status: "Built",
     sections: [
-      { title: "Problem", body: ["Security audits of web applications are repetitive: map the app, try the usual attacks, write up what broke. Most of that effort is manual."] },
-      { title: "Approach", body: ["CYPHEX is a dynamic application security testing pipeline built on a multi-agent architecture. It runs real terminal commands through an asyncio subprocess engine (curl, nmap and similar) rather than simulating attacks, and uses an LLM only to write the report and the fixes."] },
+      { title: "Problem", body: ["Restaurants, hotels and bars run on disconnected tools for tables, orders, the kitchen, billing and stock, and the apps that send them customers usually charge a commission on every order."] },
+      { title: "Approach", body: ["Dineveo is a restaurant and hotel operating system paired with a free consumer app. Restaurants pay for the software; customers pay nothing and there is no per-order commission. Four clients share one Node, Express and Socket.io backend."] },
       {
-        title: "The pipeline",
-        ordered: true,
+        title: "The four clients",
         steps: [
-          { lead: "Reconnaissance.", text: "Gathers headers and the tech stack and probes for sensitive files." },
-          { lead: "Crawling.", text: "Maps endpoints and parses forms and parameters for targeted fuzzing." },
-          { lead: "Exploitation.", text: "Seven agents run in parallel: SQL injection, XSS, authentication, command injection, file inclusion, business logic (IDOR, SSRF, CORS) and supply chain." },
-          { lead: "Analysis.", text: "Condenses the terminal history into a formal pentest report." },
-          { lead: "Remediation.", text: "Produces framework-specific code patches and a cure plan." },
+          { lead: "Customer app.", text: "Scan a table QR, order, track it, split the bill and pay once, or pre-order takeaway." },
+          { lead: "Waiter app.", text: "Take and serve orders for assigned tables and manage table status and payments." },
+          { lead: "Restaurant CRM.", text: "Menu, tables, staff, billing and invoices, inventory, vendors, offers, reviews, analytics and the kitchen display." },
+          { lead: "Admin panel.", text: "Onboard restaurants, manage feature flags, subscriptions and support." },
         ],
       },
-      { title: "Outcome", body: ["Eleven agents share the work, cutting manual audit effort by roughly 70%. A bundled test app with 14+ intentional vulnerabilities lets anyone try it safely. The code is open source."] },
+      { title: "Outcome", body: ["A working multi-app platform covering dine-in and takeaway end to end. The repository is private."] },
     ],
   },
   "voice-agent": {
@@ -100,6 +113,7 @@ export const caseStudies: Record<string, CaseStudy> = {
           { lead: "Call.", text: "Outbound calls placed through Exotel." },
           { lead: "Listen and speak.", text: "Deepgram for speech recognition, AWS Polly for the voice, an LLM for the conversation." },
           { lead: "Act.", text: "Objection handling, appointment scheduling and CRM and WhatsApp sync." },
+          { lead: "Feed and protect.", text: "A lead pipeline collects and scores prospects, and the campaign runner checks do-not-disturb and TRAI compliance before dialling." },
         ],
       },
       { title: "Outcome", body: ["The agent places 100+ outbound calls a day and removes roughly 90% of the manual calling effort. It was delivered as freelance work."] },
@@ -152,12 +166,20 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
   ctms: {
-    categories: ["Web", "AI/ML"],
+    categories: ["Web", "AI/ML", "Open source"],
     status: "Built",
     stats: [{ value: "65%", label: "Less TPO workflow effort" }],
     sections: [
       { title: "Problem", body: ["Training and placement offices coordinate students, companies and interview rounds by hand, and matching resumes to openings is slow."] },
-      { title: "Approach", body: ["CTMS is a campus placement ERP with separate student and TPO panels, round tracking and an AI-ATS that matches resumes to roles."] },
+      { title: "Approach", body: ["CTMS (Campus Training & Management System) digitises the placement lifecycle with two dashboards on a PERN stack with Tailwind: one for students and one for Training and Placement Officers."] },
+      {
+        title: "What it does",
+        steps: [
+          { lead: "Students.", text: "Profiles, a document vault, eligibility-checked drive applications, timed mock tests and live round status." },
+          { lead: "TPO admins.", text: "Student and company management, custom selection rounds, training sessions, analytics and notifications." },
+          { lead: "AI-ATS.", text: "Matches resumes to roles to speed up shortlisting." },
+        ],
+      },
       { title: "Outcome", body: ["AI resume matching cut TPO workflow effort by 65%."] },
     ],
   },
