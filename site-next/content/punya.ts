@@ -96,7 +96,7 @@ export const projects = [
     summary: "TODO(user): one-line description of Ad Intel.", tags: ["TODO"], url: "", repo: "" },
   { slug: "quantisense", title: "Quantisense", kind: "Design and engineering", year: "2026",
     summary: "Automated credit appraisal that cuts turnaround from a week to minutes: document parsing, fraud detection, stress tests, a research agent and CAM report generation.",
-    tags: ["MERN", "ML", "EDA", "Python", "LLM", "FastAPI"], url: "", repo: "" },
+    tags: ["MERN", "ML", "EDA", "Python", "LLM", "FastAPI"], url: "", repo: "https://github.com/vedant91/Multi-agents" },
   { slug: "dineveo", title: "Dineveo", kind: "Design and engineering", year: "2026",
     summary: "Restaurant and hotel operating system: CRM, waiter app and kitchen display, paired with a free customer app for QR dine-in and takeaway.",
     tags: ["Node", "Express", "Socket.io", "React", "React Native"], url: "", repo: "" }, // repo HM_CRM is private on GitHub
