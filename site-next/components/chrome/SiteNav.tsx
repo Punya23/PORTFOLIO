@@ -7,6 +7,7 @@ import { lockScroll } from "@/lib/scroll";
 import { useContact } from "./ContactProvider";
 import { Sparkle } from "./icons";
 import { KeypadPreview } from "./Keypad";
+import { AboutCard, HomePreview, WorkPreview } from "./MenuPreviews";
 import { LocalTime } from "./LocalTime";
 import { NavLink } from "./NavLink";
 
@@ -189,21 +190,6 @@ export function SiteNav({ links = DEFAULT_LINKS, availability = { open: true, te
   );
 }
 
-/** Gradient stand-in for the reference's per-link hover image (no project/portrait media yet). */
-function Cover({ i }: { i: number }) {
-  const [a, b, c, d] = [["16%", "6%", "92%", "104%"], ["84%", "4%", "8%", "100%"], ["50%", "-6%", "100%", "72%"], ["10%", "96%", "88%", "-4%"]][i % 4]!;
-  return (
-    <div
-      aria-hidden="true"
-      className="grain absolute inset-0 overflow-hidden"
-      style={{
-        backgroundColor: "#160907",
-        backgroundImage: `radial-gradient(110% 92% at ${a} ${b}, #d9a441 0%, transparent 68%), radial-gradient(90% 80% at ${c} ${d}, var(--color-ember-deep) 0%, transparent 66%)`,
-      }}
-    />
-  );
-}
-
 function MenuPanel({ links, onClose, onContact, panelRef }: {
   links: NavItem[]; onClose: () => void; onContact: () => void; panelRef: React.RefObject<HTMLDivElement | null>;
 }) {
@@ -240,10 +226,10 @@ function MenuPanel({ links, onClose, onContact, panelRef }: {
     : href === "#contact-section"
       ? { frame: "aspect-auto w-auto overflow-visible rounded-none", node: <KeypadPreview className="-rotate-6 text-[clamp(0.8rem,1vw,1rem)]" />, relative: true }
     : href === "#work"
-      ? { frame: "aspect-[4/3] w-[min(380px,30vw)] bg-ink overflow-hidden rounded-tile", node: <Cover i={1} /> }
+      ? { frame: "aspect-[4/3] w-[min(380px,30vw)] bg-ink overflow-hidden rounded-tile", node: <WorkPreview /> }
     : href === "#desktop"
-      ? { frame: "aspect-[1400/1985] w-[min(280px,22vw)] -rotate-3 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] overflow-hidden rounded-tile", node: <Cover i={2} /> }
-      : { frame: "aspect-square w-[min(190px,16vw)] overflow-hidden rounded-tile", node: <Cover i={0} /> };
+      ? { frame: "aspect-[1400/1985] w-[min(280px,22vw)] -rotate-3 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] overflow-hidden rounded-tile", node: <AboutCard /> }
+      : { frame: "aspect-square w-[min(190px,16vw)] overflow-hidden rounded-tile", node: <HomePreview /> };
 
   return (
     <div
