@@ -14,7 +14,7 @@ export default function Home() {
     <div id="site-shell">
       <main id="main">
         <div data-page="true">
-          <div dangerouslySetInnerHTML={{ __html: MARK + HERO }} />
+          <div className="contents" dangerouslySetInnerHTML={{ __html: MARK + HERO }} />
           <Statement />
           <Desktop />
           <Toolkit />
