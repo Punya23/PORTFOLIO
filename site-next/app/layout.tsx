@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces, Geist_Mono, Caveat } from "next/font/google";
+import { Inter, Instrument_Serif, Geist_Mono, Caveat } from "next/font/google";
 import "./site.css";
 import "./custom.css";
 import { ContactProvider, SiteChrome } from "@/components/chrome";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-// Accent serif (italic words). Kept on the --font-instrument variable because site.css reads it.
-const instrument = Fraunces({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-instrument" });
+const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 const caveat = Caveat({ subsets: ["latin"], weight: "500", variable: "--font-hand" });
 
