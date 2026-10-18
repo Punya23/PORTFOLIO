@@ -9,7 +9,7 @@ const POS = [["16%", "6%", "92%", "104%"], ["84%", "4%", "8%", "100%"], ["50%", 
 function cover(i: number, title: string, media?: string) {
   if (media) return `<img alt="${title}" loading="lazy" decoding="async" class="object-cover" style="position:absolute;height:100%;width:100%;inset:0" src="${media}">`;
   const c = POS[i % 4];
-  return `<div role="img" aria-label="${title} cover placeholder" class="grain absolute inset-0 overflow-hidden" style="background-color:#160907;background-image:radial-gradient(110% 92% at ${c[0]} ${c[1]},#E8363C 0%,transparent 68%),radial-gradient(90% 80% at ${c[2]} ${c[3]},var(--color-ember-deep) 0%,transparent 66%)"></div>`;
+  return `<div role="img" aria-label="${title} cover placeholder" class="grain absolute inset-0 overflow-hidden" style="background-color:#160907;background-image:radial-gradient(110% 92% at ${c[0]} ${c[1]},#d9a441 0%,transparent 68%),radial-gradient(90% 80% at ${c[2]} ${c[3]},var(--color-ember-deep) 0%,transparent 66%)"></div>`;
 }
 const BEFORE = CRAFT_BEFORE.replace(/@@COVER(\d+)@@/g, (_, k) => {
   const p = projects[Number(k) % projects.length];

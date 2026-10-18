@@ -198,7 +198,7 @@ function Cover({ i }: { i: number }) {
       className="grain absolute inset-0 overflow-hidden"
       style={{
         backgroundColor: "#160907",
-        backgroundImage: `radial-gradient(110% 92% at ${a} ${b}, #E8363C 0%, transparent 68%), radial-gradient(90% 80% at ${c} ${d}, var(--color-ember-deep) 0%, transparent 66%)`,
+        backgroundImage: `radial-gradient(110% 92% at ${a} ${b}, #d9a441 0%, transparent 68%), radial-gradient(90% 80% at ${c} ${d}, var(--color-ember-deep) 0%, transparent 66%)`,
       }}
     />
   );

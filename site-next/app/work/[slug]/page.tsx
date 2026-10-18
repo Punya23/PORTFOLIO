@@ -40,7 +40,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
   return (
     <main id="main">
       <div data-page="true">
-        <article style={{ "--accent": "#E8363C" } as React.CSSProperties}>
+        <article style={{ "--accent": "#d9a441" } as React.CSSProperties}>
           <header data-tone="ink" className="tone-ink relative isolate min-h-[100svh] overflow-hidden">
             <div data-shared-target="true" className="absolute inset-0 -z-20 bg-ink">
               <ProjectMedia media={p.media} title={p.title} index={i} priority sizes="100vw" />

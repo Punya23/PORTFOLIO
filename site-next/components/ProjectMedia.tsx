@@ -17,7 +17,7 @@ type Props = {
 };
 
 /** Project cover: video, image (next/image fill; parent must be positioned) or the gradient placeholder. */
-export function ProjectMedia({ media, title, index, accent = "#E8363C", sizes = "100vw", priority = false, numeral = false, shift = 0, className }: Props) {
+export function ProjectMedia({ media, title, index, accent = "#d9a441", sizes = "100vw", priority = false, numeral = false, shift = 0, className }: Props) {
   if (media?.kind === "video")
     return (
       <video className={cn("absolute inset-0 h-full w-full object-cover", className)} src={media.url} aria-label={media.alt}
