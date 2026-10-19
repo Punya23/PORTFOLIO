@@ -2,9 +2,19 @@
 import { useEffect } from "react";
 import { loadGsap } from "@/lib/gsap";
 import { initHeroBits } from "@/lib/heroBits";
+import { useContact } from "@/components/chrome/ContactProvider";
 
 /** Publishes hero scroll progress as --sp (drives the portrait parallax in CSS). */
 export function HeroEffects() {
+  const { openContact } = useContact();
+  // The hero is static HTML, so its "Talk now" button is wired here (delegated click).
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if ((e.target as Element | null)?.closest("[data-hero-cta]")) openContact();
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [openContact]);
   useEffect(() => {
     const hero = document.getElementById("hero");
     if (!hero || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
