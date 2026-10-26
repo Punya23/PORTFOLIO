@@ -12,8 +12,6 @@ export type WorkItem = { slug: string; title: string; year: string; summary: str
 export function WorkIndex({ projects, categoryOrder }: { projects: WorkItem[]; categoryOrder: string[] }) {
   const cats = useMemo(() => categoryOrder.filter((c) => projects.some((p) => p.categories.includes(c))), [projects, categoryOrder]);
   const [filter, setFilter] = useState("All");
-  /** Small round thumbnail per category chip: the first project in it that has a screenshot. */
-  const thumb = (c: string) => projects.find((p) => p.media && (c === "All" || p.categories.includes(c)))?.media?.url;
   const [view, setView] = useState<"grid" | "list">("grid");
   const [hover, setHover] = useState<number | null>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -42,12 +40,7 @@ export function WorkIndex({ projects, categoryOrder }: { projects: WorkItem[]; c
               <button key={c} type="button" aria-pressed={on} onClick={() => { setFilter(c); setHover(null); }}
                 className={cn("relative h-10 rounded-pill border px-4 text-[0.9375rem] transition-colors duration-300", on ? "border-transparent text-white" : "border-line hover:border-fg/40")}>
                 {on && <span className="absolute inset-0 rounded-pill bg-ink" />}
-                <span className="relative inline-flex items-center gap-2">
-                  {thumb(c) && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={thumb(c)} alt="" width={24} height={24} draggable={false} className="size-6 rounded-full object-cover"
-                      style={{ objectPosition: "left top" }} />
-                  )}
+                <span className="relative">
                   {c}
                   {c === "All" && <span className={cn("ml-1.5", on ? "text-white/60" : "text-muted")}>{projects.length}</span>}
                 </span>
