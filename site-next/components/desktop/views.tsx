@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { person, resumeUrl } from "@/content/punya";
+import { person } from "@/content/punya";
 import {
   ActionIcon, BulletsIcon, ChecklistIcon, ChevDown, ChevLeft, ChevRight, ComposeIcon, DocIcon, FolderIcon,
   FontIcon, GridIcon, ListIcon, LockIcon, SearchIcon, ShareIcon, SideFolderIcon, SideNoteIcon, TableIcon,
@@ -450,7 +450,7 @@ export function AboutView() {
           </div>
         ))}
       </dl>
-      <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="ab-btn" data-nodrag>
+      <a href="/about" className="ab-btn" data-nodrag>
         More Info…
       </a>
       <p className="ab-legal">

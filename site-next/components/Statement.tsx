@@ -32,10 +32,16 @@ export function Statement() {
               </p>
               <p className="statement-note text-ash">Agents, models and the web apps around them, from first prototype to production.</p>
             </div>
-            <Link className="statement-cta group" href="/work">
-              <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-px group-hover:-translate-y-px">↗</span>
-              See selected work
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link className="statement-cta group" href="/work">
+                <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-px group-hover:-translate-y-px">↗</span>
+                See selected work
+              </Link>
+              <Link className="statement-cta group" href="/about">
+                <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-px group-hover:-translate-y-px">↗</span>
+                More about me
+              </Link>
+            </div>
           </div>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
