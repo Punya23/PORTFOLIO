@@ -22,6 +22,9 @@ const capabilities: Capability[] = [
   { title: "UI/UX", description: "Interfaces designed in Figma and shipped in code, plus branding and Meta Ads for small-business clients." },
 ];
 
+/** Year the freelance work and the degree both started. */
+const SINCE = "2024";
+
 const rows = [
   { k: "Based in", v: person.city },
   { k: "Studying", v: "B.Tech, CSE (AI & ML)", sub: `${education[0].period} · ${person.university}` },
@@ -55,12 +58,21 @@ export default function AboutPage() {
       <div data-page="true">
         <section data-tone="ink" className="tone-ink grain relative overflow-hidden lg:min-h-svh">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[54%] aspect-square w-[min(120vw,70rem)] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
-            style={{ background: "radial-gradient(circle, rgb(232 54 60 / 0.42) 0%, rgb(232 54 60 / 0.12) 38%, transparent 66%)" }} />
+            style={{ background: "radial-gradient(circle, rgb(217 164 65 / 0.38) 0%, rgb(217 164 65 / 0.1) 38%, transparent 66%)" }} />
           <div className="wrap relative z-[2] flex flex-col pb-[clamp(3rem,6vw,5rem)] pt-[clamp(96px,9vw,128px)] lg:min-h-svh">
-            <p className="text-meta text-muted">(About)</p>
+            <div className="flex items-center justify-between gap-6">
+              <p className="text-meta text-muted">(About)</p>
+              <p className="text-meta uppercase text-muted">[Based in &mdash; Pune, IN]</p>
+            </div>
             <div className="my-auto grid items-center gap-x-[clamp(1.5rem,4vw,5rem)] gap-y-12 py-[clamp(2rem,4vw,3rem)] lg:grid-cols-[1fr_auto_1fr]">
               <div className="flex flex-col gap-8">
                 <h1 className="max-w-[11ch] text-balance text-[clamp(2.75rem,min(5.2vw,9svh),5.5rem)] leading-[0.94]">An engineer who ships the whole product.</h1>
+                <p className="text-meta flex items-center gap-1.5 uppercase" aria-label="Building since 2024">
+                  <span className="inline-flex h-8 items-center rounded-pill border border-white/25 px-3">Since</span>
+                  {SINCE.split("").map((d, i) => (
+                    <span key={i} aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 32, height: 32, borderRadius: 999, background: "#fff", color: "#0a0a0a", fontSize: 13 }}>{d}</span>
+                  ))}
+                </p>
                 <div className="flex flex-wrap gap-2.5">
                   <Link href="/work" className="group inline-flex h-12 items-center gap-2 rounded-pill bg-white px-6 text-[0.9375rem] font-medium text-ink transition-colors duration-300 hover:bg-ember hover:text-white">
                     See my work
@@ -140,7 +152,7 @@ export default function AboutPage() {
                   {experience.map((e, i) => (
                     <li key={e.role + e.org} className="relative grid grid-cols-[1.25rem_1fr] gap-x-4 pb-8 last:pb-0">
                       {i === 0 && <span aria-hidden="true" className="absolute bottom-0 left-[0.3125rem] top-3 w-px bg-white/15" />}
-                      <span aria-hidden="true" className={i === 0 ? "relative mt-[0.4rem] size-[0.6875rem] rounded-full bg-ember shadow-[0_0_0_4px_rgb(232_54_60/0.22)]" : "relative mt-[0.4rem] size-[0.6875rem] rounded-full border border-white/40"} />
+                      <span aria-hidden="true" className={i === 0 ? "relative mt-[0.4rem] size-[0.6875rem] rounded-full bg-ember shadow-[0_0_0_4px_rgb(217_164_65/0.22)]" : "relative mt-[0.4rem] size-[0.6875rem] rounded-full border border-white/40"} />
                       <div>
                         <p className="text-meta text-muted">{e.period}</p>
                         <p className="mt-2 text-[clamp(1.25rem,1.7vw,1.5rem)] font-medium leading-tight">{e.role}</p>
