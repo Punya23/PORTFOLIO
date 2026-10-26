@@ -7,9 +7,9 @@ import { Typewriter } from "./Typewriter";
 /** Same destinations as the menu overlay; keep in sync with SiteNav's default links. */
 export const FOOTER_LINKS = [
   { href: "/", label: "Home" },
-  { href: "#work", label: "Work" },
-  { href: "#desktop", label: "About" },
-  { href: "#contact-section", label: "Contact" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 /** `<footer id="contact">`: link list + local time, giant name mark, copyright typewriter and back-to-top. */

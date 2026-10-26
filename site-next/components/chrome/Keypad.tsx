@@ -132,8 +132,8 @@ export function Keypad({ socials, email, resumeUrl }: { socials: Social[]; email
     { id: "email", tone: "red", label: "Email", line: "Copy my email\naddress", icon: ICON.mail, onPress: copyEmail },
     { id: "leetcode", tone: "orange", label: "LeetCode", line: "See my LeetCode\nprofile", icon: ICON.code, href: url("leetcode"), external: true },
     { id: "resume", tone: "white", label: "Resume", line: "Download my\nresume", icon: ICON.dot, href: resumeUrl, external: true },
-    { id: "work", tone: "green", label: "Work", line: "Browse my\nselected work", icon: ICON.work, href: "#work" },
-    { id: "about", tone: "peach", label: "About", line: "Read more\nabout me", icon: <Num n={8} />, href: "#desktop" },
+    { id: "work", tone: "green", label: "Work", line: "Browse my\nselected work", icon: ICON.work, href: "/work" },
+    { id: "about", tone: "peach", label: "About", line: "Read more\nabout me", icon: <Num n={8} />, href: "/about" },
     // Reference's 9th key is Instagram; Punya has none, so it takes the reference's own "Home" fallback key.
     { id: "home", tone: "yellow", label: "Home", line: "Back to\nthe start", icon: ICON.code, href: "/" },
   ];

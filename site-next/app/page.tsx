@@ -8,11 +8,11 @@ import { Toolkit } from "@/components/Toolkit";
 import { Work } from "@/components/Work";
 import { Craft } from "@/components/Craft";
 import { Narration } from "@/components/Narration";
-import { ContactSection, SiteFooter, BitField } from "@/components/chrome";
+import { ContactSection, BitField } from "@/components/chrome";
 
 export default function Home() {
   return (
-    <div id="site-shell">
+    <>
       <main id="main">
         <div data-page="true">
           <div className="contents" dangerouslySetInnerHTML={{ __html: MARK + HERO }} />
@@ -26,11 +26,10 @@ export default function Home() {
         </div>
         <BitField />
       </main>
-      <SiteFooter />
       <HeroDock />
       <HeroEffects />
       <Clock />
       <Narration />
-    </div>
+    </>
   );
 }

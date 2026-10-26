@@ -1,11 +1,22 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { loadGsap } from "@/lib/gsap";
-import { setLenis } from "@/lib/scroll";
+import { scrollToTopNow, setLenis } from "@/lib/scroll";
 
 /** Lenis driven by the GSAP ticker, kept in sync with ScrollTrigger. Mount once (inside <SiteChrome/>). */
 export function SmoothScroll() {
+  const pathname = usePathname();
+  const first = useRef(true);
+  // New route: start at the top and re-measure every ScrollTrigger once the new page has laid out.
+  useEffect(() => {
+    if (first.current) { first.current = false; return; }
+    scrollToTopNow();
+    const id = setTimeout(() => { void loadGsap().then(({ ScrollTrigger }) => ScrollTrigger.refresh()); }, 150);
+    return () => clearTimeout(id);
+  }, [pathname]);
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let dispose: (() => void) | undefined;

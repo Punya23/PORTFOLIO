@@ -14,9 +14,9 @@ import { NavLink } from "./NavLink";
 type NavItem = { href: string; label: string };
 const DEFAULT_LINKS: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "#work", label: "Work" },
-  { href: "#desktop", label: "About" },
-  { href: "#contact-section", label: "Contact" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
@@ -223,11 +223,11 @@ function MenuPanel({ links, onClose, onContact, panelRef }: {
   const href = hover != null ? links[hover]?.href : undefined;
   const preview: { frame: string; node: ReactNode; relative?: boolean } | null =
     hover == null ? null
-    : href === "#contact-section"
+    : href === "/contact"
       ? { frame: "aspect-auto w-auto overflow-visible rounded-none", node: <KeypadPreview className="-rotate-6 text-[clamp(0.8rem,1vw,1rem)]" />, relative: true }
-    : href === "#work"
+    : href === "/work"
       ? { frame: "aspect-[4/3] w-[min(380px,30vw)] bg-ink overflow-hidden rounded-tile", node: <WorkPreview /> }
-    : href === "#desktop"
+    : href === "/about"
       ? { frame: "aspect-[1400/1985] w-[min(280px,22vw)] -rotate-3 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.6)] overflow-hidden rounded-tile", node: <AboutCard /> }
       : { frame: "aspect-square w-[min(190px,16vw)] overflow-hidden rounded-tile", node: <HomePreview /> };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Geist_Mono, Caveat } from "next/font/google";
 import "./site.css";
 import "./custom.css";
-import { ContactProvider, SiteChrome } from "@/components/chrome";
+import { ContactProvider, SiteChrome, SiteFooter } from "@/components/chrome";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
@@ -23,7 +23,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" data-nav-tone="ink" className={`${inter.variable} ${instrument.variable} ${geistMono.variable} ${caveat.variable}`}>
-      <body><ContactProvider><SiteChrome />{children}</ContactProvider></body>
+      <body><ContactProvider>
+          <SiteChrome />
+          <div id="site-shell">
+            {children}
+            <SiteFooter />
+          </div>
+        </ContactProvider></body>
     </html>
   );
 }
