@@ -120,3 +120,6 @@ const allProjects = [
 ];
 export const projects = allProjects.filter((p) => !("draft" in p && p.draft));
 export const selectedProjects = projects.slice(0, 4);
+
+/** GitHub account whose public contribution calendar feeds the activity block. */
+export const githubUser = "Punya23";

@@ -7,6 +7,7 @@ import { Desktop } from "@/components/Desktop";
 import { Toolkit } from "@/components/Toolkit";
 import { Work } from "@/components/Work";
 import { Craft } from "@/components/Craft";
+import { GithubActivity } from "@/components/GithubActivity";
 import { Narration } from "@/components/Narration";
 import { ContactSection, BitField } from "@/components/chrome";
 
@@ -21,6 +22,7 @@ export default function Home() {
           <Toolkit />
           <Work />
           <Craft />
+          <GithubActivity />
           <div aria-hidden="true" className="tone-paper bg-bg h-[clamp(64px,9vw,140px)]" />
           <ContactSection />
         </div>

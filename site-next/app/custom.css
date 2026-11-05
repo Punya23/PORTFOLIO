@@ -50,3 +50,10 @@
     linear-gradient(var(--color-paper), #0000 32%),
     linear-gradient(0deg, #000, #000000d9 7%, #0000 26%);
 }
+
+/* github activity: logo with a slowly rotating purple/gold glow */
+@keyframes gh-spin { to { transform: rotate(1turn); } }
+.gh-logo { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; overflow: hidden; color: #fff; }
+.gh-logo-glow { position: absolute; inset: -60%; background: conic-gradient(from 0deg, #7c4dff, #d9a441, #f6d98a, #7c4dff); filter: blur(10px); animation: gh-spin 5s linear infinite; }
+.gh-logo-face { position: relative; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: #0d0c0b; }
+@media (prefers-reduced-motion: reduce) { .gh-logo-glow { animation: none; } }

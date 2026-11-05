@@ -1,6 +1,7 @@
 import { person } from "@/content/punya";
 import { BackToTop } from "./BackToTop";
 import { LocalTime } from "./LocalTime";
+import { ParticleWord } from "@/components/ParticleWord";
 import { NavLink } from "./NavLink";
 import { Typewriter } from "./Typewriter";
 
@@ -36,9 +37,9 @@ export function SiteFooter() {
                 <LocalTime className="min-w-[16ch] tabular-nums mt-2 block !font-sans !text-[0.8125rem] text-fg" />
               </div>
             </div>
-            <p aria-hidden="true" className="footer-mark order-3 select-none text-white max-lg:mt-auto max-lg:pt-24">
-              {person.first}<span>©</span>
-            </p>
+            <div aria-hidden="true" className="order-3 max-lg:mt-auto max-lg:pt-24" style={{ height: "clamp(8rem, 22vw, 20rem)", width: "100%" }}>
+              <ParticleWord text={person.first} gap={5} dot={1.5} />
+            </div>
           </div>
           <div className="contents lg:flex lg:flex-col lg:justify-end lg:gap-y-[clamp(1.5rem,2.2vw,2.25rem)]">
             <div className="order-4 text-white">
